@@ -1,3 +1,14 @@
+<?php
+    if($pages=="" and $files=="")
+    {
+        $active["fberanda"]="active";
+    }
+    else
+    {
+         $active["$pages"]="active";
+    }
+?>
+
 
 <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
     <a href="/" class="navbar-brand p-0">
@@ -9,19 +20,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
-            <a href="/" class="nav-item nav-link <?= $active['beranda'] ?>">Beranda</a>
+            <a href="/" class="nav-item nav-link <?= $active['fberanda'] ?>">Beranda</a>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link  <?= $active['profil'] ?>" data-bs-toggle="dropdown">
+                <a href="#" class="nav-link  <?= $active['fprofil'] ?>" data-bs-toggle="dropdown">
                     <span class="dropdown-toggle">Profil</span>
                 </a>
                 <div class="dropdown-menu m-0">
                     <?php
                         $dtprofil=[
-                                ["/profil/sejarah","Sejarah"],
-                                ["/profil/identitas","Identitas"],
-                                ["/profil/lokasi","Lokasi"],
-                                ["/profil/galeri","Galeri"],
-                                ["/profil/pegawai","Pegawai"]
+                                ["/fprofil/sejarah","Sejarah","sejarah"],
+                                ["/fprofil/identitas","Identitas","identitas"],
+                                ["/fprofil/lokasi","Lokasi","lokasi"],
+                                ["/fprofil/galeri","Galeri","galeri"],
+                                ["/fprofil/pegawai","Pegawai","pegawai"]
                             ];
                     ?>
                     <?php foreach($dtprofil as list($lilinkprofil,$linamaprofil)): ?>
@@ -29,23 +40,23 @@
                     <a href="<?= $lilinkprofil ?>" class="dropdown-item"><?= $linamaprofil ?></a>
 
                     <?php endforeach; ?>
-                    
+
                 </div>
             </div>
-            <a href="index.html" class="nav-item nav-link <?= $active['progsek'] ?>">Program Sekolah</a>
+            <a href="/fprogram/program" class="nav-item nav-link <?= $active['fprogram'] ?>">Program Sekolah</a>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link <?= $active['jurusan'] ?>" data-bs-toggle="dropdown">
+                <a href="#" class="nav-link <?= $active['fjurusan'] ?>" data-bs-toggle="dropdown">
                     <span class="dropdown-toggle">Jurusan</span>
                 </a>
                 <div class="dropdown-menu m-0">
                     <?php
                         $dtjur=[
-                                ["/mjur/jurusan/rpl","Rekayasa Perangkat Lunak"],
-                                ["/mjur/jurusan/tkj","Teknik Komputer dan Jaringan"],
-                                ["/mjur/jurusan/tkr","Teknik Kendaraan Ringan"],
-                                ["/mjur/jurusan/ak","Akuntasi"],
-                                ["/mjur/jurusan/mp","Manajemen Perkantoran"],
-                                ["/mjur/jurusan/htl","Perhotelan"]
+                                ["/fjurusan/jurusan/rpl","Rekayasa Perangkat Lunak","rpl"],
+                                ["/fjurusan/jurusan/tkj","Teknik Komputer dan Jaringan","tkj"],
+                                ["/fjurusan/jurusan/tkr","Teknik Kendaraan Ringan","tkr"],
+                                ["/fjurusan/jurusan/ak","Akuntansi","ak"],
+                                ["/fjurusan/jurusan/mp","Manajemen Perkantoran","mp"],
+                                ["/fjurusan/jurusan/htl","Perhotelan","htl"]
                             ];
                     ?>
                     <?php foreach($dtjur as list($lilinkjur,$linamajur)): ?>
@@ -57,21 +68,21 @@
                 </div>
             </div>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link <?= $active['kegsiswa'] ?>" data-bs-toggle="dropdown">
+                <a href="#" class="nav-link <?= $active['fkegiatan'] ?>" data-bs-toggle="dropdown">
                     <span class="dropdown-toggle">Kegiatan Siswa</span>
                 </a>
                 <div class="dropdown-menu m-0">
                     <?php
                         $dtksiswa=[
-                                ["/mksiswa/kegiatan/osis","OSIS"],
-                                ["/mksiswa/kegiatan/pramuka","Pramuka"],
-                                ["/mksiswa/kegiatan/pmr","PMR"],
-                                ["/mksiswa/kegiatan/futsal","Futsal"],
-                                ["/mksiswa/kegiatan/voli","Bola Voli"],
-                                ["/mksiswa/kegiatan/jurnalistik","Jurnalistik"],
-                                ["/mksiswa/kegiatan/akustik","Akustik"],
-                                ["/mksiswa/kegiatan/karawitan","Karawitan"],
-                                ["/mksiswa/kegiatan/tari","Tari"]
+                                ["/fkegiatan/kegiatan/osis","OSIS","osis"],
+                                ["/fkegiatan/kegiatan/pramuka","Pramuka","pramuka"],
+                                ["/fkegiatan/kegiatan/pmr","PMR","pmr"],
+                                ["/fkegiatan/kegiatan/futsal","Futsal","futsal"],
+                                ["/fkegiatan/kegiatan/voli","Bola Voli","voli"],
+                                ["/fkegiatan/kegiatan/jurnalistik","Jurnalistik","jurnalistik"],
+                                ["/fkegiatan/kegiatan/akustik","Akustik","akustik"],
+                                ["/fkegiatan/kegiatan/karawitan","Karawitan","karawitan"],
+                                ["/fkegiatan/kegiatan/tari","Tari","tari"]
                             ];
                     ?>
                     <?php foreach($dtksiswa as list($lilinkdksiswa,$linamadksiswa)): ?>
@@ -83,16 +94,16 @@
                 </div>
             </div>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link <?= $active['konten'] ?>" data-bs-toggle="dropdown">
+                <a href="#" class="nav-link <?= $active['fkonten'] ?>" data-bs-toggle="dropdown">
                     <span class="dropdown-toggle">Konten</span>
                 </a>
                 <div class="dropdown-menu m-0">
 
                     <?php
                         $dtkonten=[
-                                ["/konten/berita","Berita"],
-                                ["/konten/artikel","Artikel"],
-                                ["/konten/video","Video"]
+                                ["/fkonten/berita","Berita","berita"],
+                                ["/fkonten/artikel","Artikel","artikel"],
+                                ["/fkonten/video","Video","video"]
                             ];
                     ?>
                     <?php foreach($dtkonten as list($lilinkkonten,$linamakonten)): ?>
@@ -103,8 +114,8 @@
 
                 </div>
             </div>
-            <a href="contact.html" class="nav-item nav-link <?= $active['kontak'] ?>">Kontak Kami</a>
-            <a href="contact.html" class="nav-item nav-link <?= $active['login'] ?>">Login <i class="fa fa-sign-in-alt"></i></a>
+            <a href="/fkontak/kontak" class="nav-item nav-link <?= $active['fkontak'] ?>">Kontak Kami</a>
+            <a href="/flogin/login" class="nav-item nav-link <?= $active['flogin'] ?>">Login <i class="fa fa-sign-in-alt"></i></a>
         </div>
     </div>
 </nav>

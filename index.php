@@ -1,5 +1,6 @@
 <?php
     error_reporting(0);
+    include "common/routing.php";
     
     if($_COOKIE['id']!="")
     {
@@ -7,7 +8,7 @@
     }
     else
     {
-        include("stocker-home.php");
+        include("stocker.php");
     }
 
 ?>
